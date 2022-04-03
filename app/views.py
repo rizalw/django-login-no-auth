@@ -17,3 +17,13 @@ def login(request):
 
 def inside(request):
     return render(request, 'app/inside.html')
+
+def register(request):
+    return render(request, 'app/register.html')
+
+def submitRegister(request):
+    new_user = User()
+    new_user.username = request.POST['username']
+    new_user.password = request.POST['password']
+    new_user.save()
+    return HttpResponseRedirect(reverse('app:index'))
