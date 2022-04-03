@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Halaman Utama
+{% endblock %}
+
+{% block body %}
+<div class="fs-1 text-center">Login System</div>
+<form action="{% url 'app:login'  %}" method="post">
+    {% csrf_token %}
+    <label for="" class="form-text">Username</label>
+    <input type="text" name="username" id="" class="form-control mb-2">
+    <label for="" class="form-text">Password</label>
+    <input type="password" name="password" id="" class="form-control mb-3">
+    <input type="submit" value="Login" class="btn btn-success w-100">
+</form>
+{% endblock %}
